@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="coronapy-cli",
-    version="1.0.0",
+    version="1.2.1",
     author="MouadBH",
     author_email="mouad123b@gmail.com",
     description="A command line tool to fetch worldwide data about Corona Virus",
@@ -13,12 +13,13 @@ setup(
     long_description_content_type="text/markdown",
     keywords = ['corona', 'covid-19', 'cli', 'corona-cli'], 
     url="https://github.com/MouadBH/coronapy-cli",
+    license="MIT",
     packages=find_packages(),
     package_data={},
     install_requires=['Click', 'pyfiglet', 'prettytable', 'yaspin', 'termgraph', 'colorama', 'termcolor'],
     entry_points='''
         [console_scripts]
-        coronapy=cli:cli
+        coronapy=coronapy.cli:cli
     ''',
     classifiers=[
         "Programming Language :: Python :: 3",

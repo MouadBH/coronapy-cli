@@ -13,7 +13,7 @@ from termgraph import termgraph as tg
 def init():
     click.clear()
     f = Figlet(font='slant')
-    click.echo(str(color.prCyan(f.renderText('Corona CLI'))) + str(color.prGreen('Corona-cli')) + str(color.prYellow('v1.0.0')) + ' by MouadBH.')
+    click.echo(str(color.prCyan(f.renderText('Corona CLI'))) + str(color.prGreen('Corona-cli')) + str(color.prYellow('v1.2.0')) + ' by MouadBH.')
     click.echo(' Track the Coronavirus disease (COVID-19).')
     print(' \n')
 

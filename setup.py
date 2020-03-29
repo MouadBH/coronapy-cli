@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf8") as fh:
 
 setup(
     name="coronapy-cli",
-    version="1.3.0",
+    version="1.3.2",
     author="MouadBH",
     author_email="mouad123b@gmail.com",
     description="A command line tool to fetch worldwide data about Corona Virus",

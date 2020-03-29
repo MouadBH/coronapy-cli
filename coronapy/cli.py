@@ -3,7 +3,7 @@
 import time
 import click
 import requests
-from lib import color, get_world_wide, get_countries, get_country
+from .lib import color, get_world_wide, get_countries, get_country
 from pyfiglet import Figlet
 from prettytable import PrettyTable
 from yaspin import yaspin

@@ -13,8 +13,6 @@
 Stay Home, Stay Safe.
 </h4>
 
-<br>
-
 # coronapy-cli
 
 Track the Coronavirus disease (COVID-19) in the command line.

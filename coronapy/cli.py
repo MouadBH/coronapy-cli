@@ -88,7 +88,7 @@ def country(country, chart, hist, type):
     ]
 
     with yaspin(text="Civid-19 Cases Of " + country, color="cyan") as sp:
-        data = get_country.get_country(country)
+        data, meta_data = get_country.get_country(country)
         worldwide_table.add_row(data)
         time.sleep(1)    
 
@@ -105,13 +105,17 @@ def country(country, chart, hist, type):
 
     if hist:
         with yaspin(text="Drawing a histogram of " + country, color="cyan") as sp:
-            labels_hist, hist_data = get_country.get_country_hist(country, type)
+            # Handle ISO-code as country name by using country name from meta-info of countries endpoint
+            labels_hist, hist_data = get_country.get_country_hist(meta_data['country'], type)
             time.sleep(1)
 
         args = {'stacked': False, 'width': 100, 'no_labels': False, 'format': '{:,}',
                 'suffix': '', "vertical": False }
         click.secho("Civid-19 '" + type + "' for last 20 day in " + country + ".", bg='black', fg='yellow', blink=True, bold=True)
-        tg.chart(colors=[91, 94], data=hist_data, args=args, labels=labels_hist)
+        try:
+            tg.chart(colors=[91, 94], data=hist_data, args=args, labels=labels_hist)
+        except IndexError:
+            click.secho("No historical data found in " + country + ".", bg='black', fg='red', bold=True)
 
 if __name__ == '__main__':
     cli(prog_name='coronapy')

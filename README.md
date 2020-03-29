@@ -39,6 +39,8 @@ pip install coronapy-cli
 │    └───cli.py
 ├───.gitignore
 ├───LICENSE.txt
+├───Pipfile
+├───Pipfile.lock
 ├───READMR.md
 ├───setup.cgd
 └───setup.py
@@ -114,6 +116,24 @@ coronapy countries -s critical
 coronapy --help
 ```
 
+## Development
+
+### Setup
+
+1. Clone the repo and `cd` into it.
+
+2. Set up a Python 3 virtual environment using [pipenv](https://docs.pipenv.org):
+   ```bash
+   pipenv --three         # create Python 3 virtual environment
+   pipenv install --dev   # install all dependencies
+   pipenv shell           # activate virtual environment shell
+   ```
+
+3. The script can be run from the root directory of the project:
+   ```bash
+   python3 -m coronapy.cli --help
+   ```
+   
 ## Contributing
 
 Give us a star, Fork repo & make a PR.
@@ -126,6 +146,6 @@ Give us a star, Fork repo & make a PR.
 
 This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
 
-### Sponsore
+### Sponsor
 This project sponsored by tea 🥃 and ngir dyal lwalid 😂😂.
 

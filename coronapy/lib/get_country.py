@@ -12,8 +12,7 @@ def get_country(country):
         response.json()['todayDeaths'], 
         response.json()['recovered'], 
         response.json()['active'], 
-        response.json()['critical'],
-
+        response.json()['critical']
     ]
     meta_data = response.json()['countryInfo']
     return data, meta_data

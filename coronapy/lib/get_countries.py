@@ -1,10 +1,11 @@
 import requests
 
+
 def all_countries(sorted_by):
     url = 'https://corona.lmao.ninja/countries?sort=' + sorted_by
     response = requests.get(url)
-    allCountries  = []
-    i=1
+    allCountries = []
+    i = 1
     for country in response.json():
         allCountries.append([
             i,

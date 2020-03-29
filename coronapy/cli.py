@@ -13,7 +13,7 @@ from termgraph import termgraph as tg
 def init():
     click.clear()
     f = Figlet(font='slant')
-    click.echo(str(color.prCyan(f.renderText('Corona CLI'))) + str(color.prGreen('Corona-cli')) + str(color.prYellow('v1.2.0')) + ' by MouadBH.')
+    click.echo(str(color.prCyan(f.renderText('Corona CLI'))) + str(color.prGreen('Corona-cli')) + str(color.prYellow('v1.2.1')) + ' by MouadBH.')
     click.echo(' Track the Coronavirus disease (COVID-19).')
     print(' \n')
 
@@ -44,9 +44,10 @@ def start(chart):
         tg.chart(colors=[91, 94], data=data, args=args, labels=labels)
 
 @cli.command()
-@click.option('--sort', '-s', default='cases',help='Data of each country sorted by the parameter.')
+@click.option('--sort', '-s', default='cases', help='Data of each country sorted by the parameter.')
 def countries(sort):
     """Get Civid-19 data For All Countries."""
+    
     all_countries_table = PrettyTable()
     all_countries_table.field_names = [
         color.prCyan('#'), 
@@ -59,17 +60,18 @@ def countries(sort):
         color.prYellow("Excluded cases"), 
         color.prPurple("Critical")
     ]
-
+    
     with yaspin(text="Civid-19 Cases Of All Countries", color="cyan") as sp:
         for country in get_countries.all_countries(sort):
             all_countries_table.add_row(country)
-
+    
     click.echo(all_countries_table)
+    print(sort)
 
 @cli.command()
 @click.option('--chart', '-c', is_flag=True, help='Draw a chart for the data.')
-@click.option('--hist', '-h', is_flag=True, help='Draw a histogram for the data.')
-@click.option('--type', '-t', default='=cases',help='Type of historical data.')
+@click.option('--hist', '-h', is_flag=True, help='Draw a histogram shows data in last 20 day.')
+@click.option('--type', '-t', default='cases',help='Type of historical data.')
 @click.argument('country')
 def country(country, chart, hist, type):
     """Get data of a specific country.""" 
@@ -103,12 +105,12 @@ def country(country, chart, hist, type):
 
     if hist:
         with yaspin(text="Drawing a histogram of " + country, color="cyan") as sp:
-            labels_hist, hist_data = get_country.get_country_hist(country, type[1:])
+            labels_hist, hist_data = get_country.get_country_hist(country, type)
             time.sleep(1)
 
         args = {'stacked': False, 'width': 100, 'no_labels': False, 'format': '{:,}',
                 'suffix': '', "vertical": False }
-        click.secho("Civid-19 '" + type[1:] + "' for last 20 day in " + country + ".", bg='black', fg='yellow', blink=True, bold=True)
+        click.secho("Civid-19 '" + type + "' for last 20 day in " + country + ".", bg='black', fg='yellow', blink=True, bold=True)
         tg.chart(colors=[91, 94], data=hist_data, args=args, labels=labels_hist)
 
 if __name__ == '__main__':

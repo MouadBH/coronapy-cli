@@ -1,7 +1,7 @@
-from colorama import init 
-from termcolor import colored 
+from colorama import init
+from termcolor import colored
 
-init() 
+init()
 
 def prRed(skk): return "\033[91m {}\033[00m" .format(skk)
 def prGreen(skk): return "\033[92m {}\033[00m" .format(skk)

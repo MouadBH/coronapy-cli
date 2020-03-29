@@ -25,13 +25,13 @@ def cli():
 @cli.command()
 @click.option('--chart', '-c', is_flag=True, help='Draw a chart of the data.')
 def all(chart):
-    """Start coronapy cli."""    
+    """Start coronapy cli."""
     worldwide_table = PrettyTable()
     worldwide_table.field_names = [color.prCyan('Cases'), color.prRed("Deaths"), color.prGreen("Recovered")]
 
     with yaspin(text="Worldwide Cases.", color="cyan") as sp:
         worldwide_table.add_row([f'{i:,}' for i in get_world_wide.world_wide()])
-        time.sleep(1)    
+        time.sleep(1)
 
     click.echo(worldwide_table)
     print(' \n')
@@ -47,24 +47,24 @@ def all(chart):
 @click.option('--sort', '-s', default='cases', help='Data of each country sorted by the parameter.')
 def countries(sort):
     """Get Civid-19 data For All Countries."""
-    
+
     all_countries_table = PrettyTable()
     all_countries_table.field_names = [
-        color.prCyan('#'), 
-        color.prCyan('Country'), 
-        color.prCyan('Total Cases'), 
-        color.prCyan('Today Cases'), 
-        color.prRed('Total Deaths'), 
-        color.prRed('Today Deaths'), 
-        color.prGreen('Recovered Cases'), 
-        color.prYellow("Excluded cases"), 
+        color.prCyan('#'),
+        color.prCyan('Country'),
+        color.prCyan('Total Cases'),
+        color.prCyan('Today Cases'),
+        color.prRed('Total Deaths'),
+        color.prRed('Today Deaths'),
+        color.prGreen('Recovered Cases'),
+        color.prYellow("Excluded cases"),
         color.prPurple("Critical")
     ]
-    
+
     with yaspin(text="Civid-19 Cases Of All Countries", color="cyan") as sp:
         for country in get_countries.all_countries(sort):
             all_countries_table.add_row(country)
-    
+
     click.echo(all_countries_table)
     print(sort)
 
@@ -74,27 +74,27 @@ def countries(sort):
 @click.option('--type', '-t', default='cases',help='Type of historical data.')
 @click.argument('country')
 def country(country, chart, hist, type):
-    """Get data of a specific country.""" 
+    """Get data of a specific country."""
     worldwide_table = PrettyTable()
     worldwide_table.field_names = [
-        color.prCyan('Country'), 
-        color.prCyan('Total Cases'), 
-        color.prCyan('Today Cases'), 
-        color.prRed('Total Deaths'), 
-        color.prRed('Today Deaths'), 
-        color.prGreen('Recovered Cases'), 
-        color.prYellow("Excluded cases"), 
+        color.prCyan('Country'),
+        color.prCyan('Total Cases'),
+        color.prCyan('Today Cases'),
+        color.prRed('Total Deaths'),
+        color.prRed('Today Deaths'),
+        color.prGreen('Recovered Cases'),
+        color.prYellow("Excluded cases"),
         color.prPurple("Critical")
     ]
 
     with yaspin(text="Civid-19 Cases Of " + country, color="cyan") as sp:
         data, meta_data = get_country.get_country(country)
         worldwide_table.add_row(data)
-        time.sleep(1)    
+        time.sleep(1)
 
     click.echo(worldwide_table)
     print(' ')
-    
+
     if chart:
         labels = ['Total Cases', 'Total Deaths', 'Recovered Cases']
         data_chart = [data[1], data[3], data[5]]

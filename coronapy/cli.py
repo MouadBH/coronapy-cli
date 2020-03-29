@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import time
 import click
 import requests
@@ -12,7 +14,7 @@ def init():
     click.clear()
     f = Figlet(font='slant')
     click.echo(str(color.prCyan(f.renderText('Corona CLI'))) + str(color.prGreen('Corona-cli')) + str(
-        color.prYellow('v1.2.3')) + ' by MouadBH.')
+        color.prYellow('v1.3.0')) + ' by MouadBH.')
     click.echo(' Track the Coronavirus disease (COVID-19).')
     print(' \n')
 

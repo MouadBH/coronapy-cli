@@ -9,8 +9,8 @@
 
 [![MIT License](https://img.shields.io/github/license/MouadBH/coronapy-cli?style=flat)](https://github.com/MouadBH/coronapy-cli/blob/master/LICENSE.txt) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)   [![Python Versions](https://img.shields.io/pypi/pyversions/coronapy-cli.svg)](https://pypi.python.org/pypi/coronapy-cli/) [![PyPi Version Alt](https://badge.fury.io/py/coronapy-cli.svg)](https://pypi.python.org/pypi/coronapy-cli/)   [![PyPi Downloads](https://pepy.tech/badge/coronapy-cli)](http://pepy.tech/project/coronapy-cli) [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 
-    <br>
-    Stay Home, Stay Safe.
+<br>
+Stay Home, Stay Safe.
 </h4>
 
 <br>

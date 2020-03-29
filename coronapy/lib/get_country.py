@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime
 
+
 def get_country(country):
     url = 'https://corona.lmao.ninja/countries/' + country
     response = requests.get(url)
@@ -16,6 +17,7 @@ def get_country(country):
     ]
     meta_data = response.json()['countryInfo']
     return data, meta_data
+
 
 def get_country_hist(country, type):
     url = 'https://corona.lmao.ninja/v2/historical/' + country

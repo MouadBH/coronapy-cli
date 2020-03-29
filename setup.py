@@ -11,7 +11,7 @@ setup(
     description="A command line tool to fetch worldwide data about Corona Virus",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    keywords = ['corona', 'covid-19', 'cli', 'corona-cli'], 
+    keywords=['corona', 'covid-19', 'cli', 'corona-cli'],
     url="https://github.com/MouadBH/coronapy-cli",
     license="MIT",
     packages=find_packages(),

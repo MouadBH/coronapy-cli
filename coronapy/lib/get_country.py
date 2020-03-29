@@ -14,7 +14,8 @@ def get_country(country):
         response.json()['active'], 
         response.json()['critical']
     ]
-    return data
+    meta_data = response.json()['countryInfo']
+    return data, meta_data
 
 def get_country_hist(country, type):
     url = 'https://corona.lmao.ninja/v2/historical/' + country

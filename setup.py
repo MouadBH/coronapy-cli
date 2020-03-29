@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
-with open("README.md", "r") as fh:
+with open("README.md", "r", encoding="utf8") as fh:
     long_description = fh.read()
 
 setup(
     name="coronapy-cli",
-    version="1.2.1",
+    version="1.2.3",
     author="MouadBH",
     author_email="mouad123b@gmail.com",
     description="A command line tool to fetch worldwide data about Corona Virus",

@@ -1,3 +1,14 @@
+<h4 align="center">
+    <a href="https://github.com/MouadBH/coronapy-cli">
+        <img src="https://github.com/MouadBH/coronapy-cli/raw/master/.src/corona.png" alt="coronapy-cli" />
+    </a>
+    <br>
+    <br>
+    A command line tool to fetch worldwide data about COVID-19.
+</h4>
+
+<br>
+
 # coronapy-cli
 
 Track the Coronavirus disease (COVID-19) in the command line.
@@ -5,6 +16,7 @@ Track the Coronavirus disease (COVID-19) in the command line.
 - 🚀 Get worldwide Coronavirus disease (COVID-19) reporting
 - 🤯 Active daily reporting of your country's COVID-19 statistics
 - 🗃️ Data: Country, Cases, Deaths, Recovered, Active, Critical
+- 🥃  Soon : Get Mroccan States data for Coronavirus disease reports
 
 ## Install
 
@@ -36,7 +48,7 @@ pip install coronapy-cli
 ### Worldwide Information
 
 ```sh
-# Display data for Worldwide Cases.
+# Display data for all total cases, recovery, and deaths.
 coronapy all
 
 # Display a chart of Total Cases, Total Deaths and Recovered Cases.
@@ -75,9 +87,10 @@ coronapy country China -c
 coronapy country usa --hist
 
 # You can set what kind of data (cases or deaths), the default is 'cases'.
+coronapy country usa --hist --type cases
 coronapy country usa --hist --type deaths
 
-# Alias:
+# Alias: Histogram & data type.
 coronapy country usa -h -t cases
 ```
 
@@ -112,4 +125,7 @@ Give us a star, Fork repo & make a PR.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
+
+### Sponsore
+This project sponsored by tea 🥃 and ngir dyal lwalid 😂😂.
 

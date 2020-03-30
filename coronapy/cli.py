@@ -107,17 +107,18 @@ def country(country, chart, hist, type):
         args = {'stacked': False, 'width': 100, 'no_labels': False, 'format': '{:,}',
                 'suffix': '', "vertical": False}
         tg.chart(colors=[91, 94], data=data_chart, args=args, labels=labels)
-    
+
     if hist:
+        country_full_name = data[0]
         with yaspin(text="Drawing a histogram of " + country, color="cyan") as sp:
             # Handle ISO-code as country name by using country name from meta-info of countries endpoint
-            labels_hist, hist_data = get_country.get_country_hist(meta_data['country'], type)
+            labels_hist, hist_data = get_country.get_country_hist(country_full_name, type)
             time.sleep(1)
 
         args = {'stacked': False, 'width': 100, 'no_labels': False, 'format': '{:,}',
                 'suffix': '', "vertical": False}
-                
-        click.secho("Civid-19 '" + type + "' for last 20 day in " + meta_data['country'] + ".", bg='black', fg='yellow', blink=True, bold=True)
+
+        click.secho("Civid-19 '" + type + "' for last 20 day in " + country_full_name + ".", bg='black', fg='yellow', blink=True, bold=True)
 
         try:
             tg.chart(colors=[91, 94], data=hist_data, args=args, labels=labels_hist)

@@ -37,6 +37,7 @@ pip install coronapy-cli
 ## Project Structure
 
 ```sh
+├───.github
 ├───coronapy
 │    ├───lib
 │    │   ├───__init.py__
@@ -156,7 +157,7 @@ coronapy --help
 ```
 
 ## To Do
-- Add Screenshots.
+- ~~Add Screenshots.~~
 - Catch and handle exceptions.
 - Add Mroccan States data for Coronavirus disease reports.
 - Add US States data for Coronavirus disease reports.
@@ -167,11 +168,11 @@ coronapy --help
 
 ## Issues
 
-Contributions are welcome, create a pull request to this repo and I will review your code.
+If you're facing a problem in using coronapy-cli please let me know by creating an issue in this github repository. I'm happy to help you! Don't forget to provide some screenshot or error logs of it!
 
 ## Contributing
 
-If you're facing a problem in using coronapy-cli please let me know by creating an issue in this github repository. I'm happy to help you! Don't forget to provide some screenshot or error logs of it!
+Contributions are welcome, create a pull request to this repo and I will review your code.
 
 ### Contributors list
 

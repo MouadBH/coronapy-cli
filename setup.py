@@ -5,13 +5,13 @@ with open("README.md", "r", encoding="utf8") as fh:
 
 setup(
     name="coronapy-cli",
-    version="1.2.3",
+    version="1.3.2",
     author="MouadBH",
     author_email="mouad123b@gmail.com",
     description="A command line tool to fetch worldwide data about Corona Virus",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    keywords = ['corona', 'covid-19', 'cli', 'corona-cli'], 
+    keywords=['corona', 'covid-19', 'cli', 'corona-cli', 'coronavirus', ' coronavirus-tracking', 'coronavirus-real-time', ' coronavirus-info'],
     url="https://github.com/MouadBH/coronapy-cli",
     license="MIT",
     packages=find_packages(),

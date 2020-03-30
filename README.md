@@ -32,6 +32,8 @@ pip install coronapy-cli
 
 ```
 
+[![📟](./.github/install.gif)](./../../)
+
 ## Project Structure
 
 ```sh
@@ -87,6 +89,8 @@ coronapy all --chart
 coronapy all -c
 ```
 
+[![📟](./.github/all.gif)](./../../)
+
 ### All Countries
 
 ```sh
@@ -99,6 +103,8 @@ coronapy countries --sort cases
 # Alias: Sort data by type.
 corcoronapyona countries -s recovered
 ```
+
+[![📟](./.github/countries.gif)](./../../)
 
 ### Single Country
 
@@ -123,6 +129,9 @@ coronapy country usa --hist --type deaths
 coronapy country usa -h -t cases
 ```
 
+[![📟](./.github/country.gif)](./../../)
+
+
 ### Sort Data
 
 ```sh
@@ -136,6 +145,9 @@ coronapy countries -s recovered
 coronapy countries -s active
 coronapy countries -s critical
 ```
+
+[![📟](./.github/sort.gif)](./../../)
+
 #### CLI Help
 
 ```sh

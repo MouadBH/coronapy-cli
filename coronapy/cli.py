@@ -111,14 +111,17 @@ def country(country, chart, hist, type):
     if hist:
         country_full_name = data[0]
         with yaspin(text="Drawing a histogram of " + country, color="cyan") as sp:
-            # Handle ISO-code as country name by using country name from meta-info of countries endpoint
-            labels_hist, hist_data = get_country.get_country_hist(country_full_name, type)
+            try:
+                labels_hist, hist_data = get_country.get_country_hist(country_full_name, type)
+            except KeyError as err:
+                click.secho("\n" + str(err), bg='black', fg='red', bold=True)
+                return
             time.sleep(1)
 
         args = {'stacked': False, 'width': 100, 'no_labels': False, 'format': '{:,}',
                 'suffix': '', "vertical": False}
 
-        click.secho("Civid-19 '" + type + "' for last 20 day in " + country_full_name + ".", bg='black', fg='yellow', blink=True, bold=True)
+        click.secho("COVID-19 '" + type + "' for last 20 day in " + country_full_name + ".", bg='black', fg='yellow', blink=True, bold=True)
 
         try:
             tg.chart(colors=[91, 94], data=hist_data, args=args, labels=labels_hist)

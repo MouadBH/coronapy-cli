@@ -23,6 +23,8 @@ def get_country_hist(country, type):
     url = 'https://corona.lmao.ninja/v2/historical/' + country
     response = requests.get(url)
     data = response.json()['timeline']
+    if type not in data:
+        raise KeyError("Unsupported historical data type: " + type + ". Use either of " + str(list(data.keys())))
     dicts = data[type]
     labels = []
     hist_data = []

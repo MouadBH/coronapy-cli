@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "hello!!!"
+echo "alias coronapy='python -m coronapy.cli'" >> ~/.bashrc
+echo "complete -W 'all country' coronapy" >> ~/.bashrc

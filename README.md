@@ -22,7 +22,7 @@ Track the Coronavirus disease (COVID-19) in the command line.
 - 🗃️ Data: Country, Cases, Deaths, Recovered, Active, Critical
 - 🥃  Soon : Get Mroccan States data for Coronavirus disease reports
 
-## coronapy-cli
+## Data Source
 - [NovelCOVID/API](https://github.com/NovelCOVID/API/) updated very frequently.
 
 ## Install

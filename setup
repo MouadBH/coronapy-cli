@@ -1,4 +1,5 @@
 #!/bin/bash
-echo "hello!!!"
+echo "congfiguring coronapy command alias..."
 echo "alias coronapy='python -m coronapy.cli'" >> ~/.bashrc
 echo "complete -W 'all country' coronapy" >> ~/.bashrc
+echo "done. please restart your shell in order to apply the alias"

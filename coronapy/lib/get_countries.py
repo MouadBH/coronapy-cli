@@ -2,7 +2,7 @@ import requests
 
 
 def all_countries(sorted_by):
-    url = 'https://corona.lmao.ninja/countries?sort=' + sorted_by
+    url = 'https://corona.lmao.ninja/v2/countries?sort=' + sorted_by
     response = requests.get(url)
     allCountries = []
     i = 1

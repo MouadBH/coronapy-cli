@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 def get_country(country):
-    url = 'https://corona.lmao.ninja/countries/' + country
+    url = 'https://corona.lmao.ninja/v2/countries/' + country
     response = requests.get(url)
     data = [
         response.json()['country'],

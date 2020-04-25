@@ -181,6 +181,8 @@ Contributions are welcome, create a pull request to this repo and I will review 
     <td align="center"><a href="https://github.com/MouadBH"><img src="https://avatars.githubusercontent.com/u/28781942?v=3" width="100px;" alt=""/><br /><sub><b>Mouad Boulahdoud</b></sub></a></td>
     <td align="center"><a href="https://github.com/mlisovyi"><img src="https://avatars.githubusercontent.com/u/10157590?v=3" width="100px;" alt=""/><br /><sub><b>Misha Lisovyi</b></sub></a></td>
     <td align="center"><a href="https://github.com/aymaneMx"><img src="https://avatars2.githubusercontent.com/u/30264095?v=4" width="100px;" alt=""/><br /><sub><b>aymaneMx </b></sub></td>  
+     <td align="center"><a href="https://github.com/MouadZIANI"><img src="https://avatars2.githubusercontent.com/u/29683939?v=4" width="100px;" alt=""/><br /><sub><b>Mouad ZIANI </b></sub></td>  
+      <td align="center"><a href="https://github.com/amitay87"><img src="https://avatars2.githubusercontent.com/u/4787598?v=4" width="100px;" alt=""/><br /><sub><b>Amitay </b></sub></td>  
   </tr>
 </table>
 

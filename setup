@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "configuring coronapy tab completion..."
+# echo "alias coronapy='python -m coronapy.cli'" >> ~/.bashrc
+complete -W 'all conutry' coronapy 
+echo "complete -W 'all country' coronapy" >> ~/.bashrc
+echo "done."

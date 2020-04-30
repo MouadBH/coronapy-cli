@@ -50,7 +50,7 @@ def all(chart):
 @cli.command()
 @click.option('--sort', '-s', default='cases', help='Data of each country sorted by the parameter.')
 @click.option('--limit', '-l', default=0, help='Limit the number of the returned results.')
-def countries(sort):
+def countries(sort, limit):
     """Get Civid-19 data For All Countries."""
 
     all_countries_table = PrettyTable()
@@ -70,6 +70,8 @@ def countries(sort):
         for country in get_countries.all_countries(sort, limit):
             all_countries_table.add_row(country)
 
+    all_countries_table.align = 'r'
+    all_countries_table.align[color.prCyan('Country')] = 'l'
     click.echo(all_countries_table)
     print(sort)
 

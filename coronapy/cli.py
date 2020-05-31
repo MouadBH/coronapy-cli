@@ -24,7 +24,6 @@ def cli():
     """A CLI wrapper for the API of Public APIs."""
     init()
 
-
 @cli.command()
 @click.option('--chart', '-c', is_flag=True, help='Draw a chart of the data.')
 def all(chart):

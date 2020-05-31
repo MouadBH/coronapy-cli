@@ -103,6 +103,12 @@ coronapy countries --sort cases
 
 # Alias: Sort data by type.
 corcoronapyona countries -s recovered
+
+# limit the number of results to the specified value.
+coronapy countries --limit 5  
+
+# Alias: limit the number of results .
+coronapy countries -l 5
 ```
 
 [![📟](./.github/countries.gif)](./../../)
@@ -182,7 +188,8 @@ Contributions are welcome, create a pull request to this repo and I will review 
     <td align="center"><a href="https://github.com/mlisovyi"><img src="https://avatars.githubusercontent.com/u/10157590?v=3" width="100px;" alt=""/><br /><sub><b>Misha Lisovyi</b></sub></a></td>
     <td align="center"><a href="https://github.com/aymaneMx"><img src="https://avatars2.githubusercontent.com/u/30264095?v=4" width="100px;" alt=""/><br /><sub><b>aymaneMx </b></sub></td>  
      <td align="center"><a href="https://github.com/MouadZIANI"><img src="https://avatars2.githubusercontent.com/u/29683939?v=4" width="100px;" alt=""/><br /><sub><b>Mouad ZIANI </b></sub></td>  
-      <td align="center"><a href="https://github.com/amitay87"><img src="https://avatars2.githubusercontent.com/u/4787598?v=4" width="100px;" alt=""/><br /><sub><b>Amitay </b></sub></td>  
+      <td align="center"><a href="https://github.com/amitay87"><img src="https://avatars2.githubusercontent.com/u/4787598?v=4" width="100px;" alt=""/><br /><sub><b>Amitay </b></sub></td> 
+      <td align="center"><a href="https://github.com/y1n0"><img src="https://avatars2.githubusercontent.com/u/8240619?v=4" width="100px;" alt=""/><br /><sub><b>kudos </b></sub></td>  
   </tr>
 </table>
 

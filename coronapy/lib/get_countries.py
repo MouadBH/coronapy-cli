@@ -10,10 +10,9 @@ def all_countries(sorted_by, limit):
         response = response.json()
 
     allCountries = []
-    i = 1
-    for country in response:
+    for index, country in enumerate(response):
         allCountries.append([
-            i,
+            index + 1,
             country['country'],
             '{:,}'.format(country['cases']),
             '{:,}'.format(country['todayCases']),
@@ -23,5 +22,5 @@ def all_countries(sorted_by, limit):
             '{:,}'.format(country['active']),
             '{:,}'.format(country['critical'])
         ])
-        i = i + 1
+
     return allCountries

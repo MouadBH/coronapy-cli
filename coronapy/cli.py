@@ -45,7 +45,6 @@ def all(chart):
                 'suffix': '', "vertical": False}
         tg.chart(colors=[91, 94], data=data, args=args, labels=labels)
 
-
 @cli.command()
 @click.option('--sort', '-s', default='cases', help='Data of each country sorted by the parameter.')
 @click.option('--limit', '-l', default=0, help='Limit the number of the returned results.')
@@ -96,7 +95,13 @@ def country(country, chart, hist, type):
 
     with yaspin(text="Civid-19 Cases Of " + country, color="cyan") as sp:
         data, meta_data = get_country.get_country(country)
-        worldwide_table.add_row(data)
+        cnt_name = data[0]
+        cnt_value = [f'{i:,}' for i in data[1:]]
+        cnt_data = []
+        cnt_data.append(cnt_name)
+        for x in cnt_value:
+            cnt_data.append(x)
+        worldwide_table.add_row(cnt_data)
         time.sleep(1)
 
     click.echo(worldwide_table)

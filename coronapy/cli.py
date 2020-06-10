@@ -50,7 +50,7 @@ def all(chart):
 @click.option('--sort', '-s', default='cases', help='Data of each country sorted by the parameter.')
 @click.option('--limit', '-l', default=0, help='Limit the number of the returned results.')
 def countries(sort, limit):
-    """Get Civid-19 data For All Countries."""
+    """Get Covid-19 data For All Countries."""
 
     all_countries_table = PrettyTable()
     all_countries_table.field_names = [
@@ -65,7 +65,7 @@ def countries(sort, limit):
         color.prPurple("Critical")
     ]
 
-    with yaspin(text="Civid-19 Cases Of All Countries", color="cyan") as sp:
+    with yaspin(text="Covid-19 Cases Of All Countries", color="cyan") as sp:
         for country in get_countries.all_countries(sort, limit):
 
 

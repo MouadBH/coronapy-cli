@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf8") as fh:
 
 setup(
     name="coronapy-cli",
-    version="1.4.1",
+    version="1.4.0",
     author="MouadBH",
     author_email="mouad123b@gmail.com",
     description="A command line tool to fetch worldwide data about Corona Virus",
@@ -16,7 +16,7 @@ setup(
     license="MIT",
     packages=find_packages(),
     package_data={},
-    install_requires=['Click', 'pyfiglet', 'prettytable', 'yaspin', 'termgraph', 'colorama', 'termcolor'],
+    install_requires=['requests','Click', 'pyfiglet', 'prettytable', 'yaspin', 'termgraph', 'colorama', 'termcolor'], #Okistuff, June 5th 8:29 PM: added requests to setup.py
     entry_points='''
         [console_scripts]
         coronapy=coronapy.cli:cli

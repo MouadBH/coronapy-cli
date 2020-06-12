@@ -15,7 +15,13 @@ def init():
     f = Figlet(font='slant')
     click.echo(str(color.prCyan(f.renderText('Corona CLI'))) + str(color.prGreen('Corona-cli')) + str(
         color.prYellow('v1.3.9')) + ' by MouadBH.')
-    click.echo(' Track the Coronavirus disease (COVID-19).')
+    click.echo(str(color.prPurple('Follow me on Twitch: https://www.twitch.tv/chibakutsy'))) 
+    
+
+
+        
+
+    click.echo(str(color.prRed('Track the Coronavirus disease (COVID-19).') ) )
     print(' \n')
 
 
@@ -44,6 +50,7 @@ def all(chart):
         args = {'stacked': False, 'width': 50, 'no_labels': False, 'format': '{:,}',
                 'suffix': '', "vertical": False}
         tg.chart(colors=[91, 94], data=data, args=args, labels=labels)
+
 
 @cli.command()
 @click.option('--sort', '-s', default='cases', help='Data of each continent sorted by the parameter.')
@@ -93,13 +100,18 @@ def countries(sort, limit):
     ]
 
     with yaspin(text="Civid-19 Cases Of All Continents", color="cyan") as sp:
+
         for country in get_countries.all_countries(sort, limit):
+
+
             all_countries_table.add_row(country)
 
     all_countries_table.align = 'r'
     all_countries_table.align[color.prCyan('Continent')] = 'l'
     click.echo(all_countries_table)
     print(sort)
+
+
 
 
 @cli.command()
@@ -121,15 +133,9 @@ def country(country, chart, hist, type):
         color.prPurple("Critical")
     ]
 
-    with yaspin(text="Civid-19 Cases Of " + country, color="cyan") as sp:
+    with yaspin(text="Covid-19 Cases Of " + country, color="cyan") as sp:
         data, meta_data = get_country.get_country(country)
-        cnt_name = data[0]
-        cnt_value = [f'{i:,}' for i in data[1:]]
-        cnt_data = []
-        cnt_data.append(cnt_name)
-        for x in cnt_value:
-            cnt_data.append(x)
-        worldwide_table.add_row(cnt_data)
+        worldwide_table.add_row(data)
         time.sleep(1)
 
     click.echo(worldwide_table)
@@ -162,6 +168,9 @@ def country(country, chart, hist, type):
             tg.chart(colors=[91, 94], data=hist_data, args=args, labels=labels_hist)
         except IndexError:
             click.secho("No historical data found in " + country + ".", bg='black', fg='red', bold=True)
+
+
+
 
 
 if __name__ == '__main__':

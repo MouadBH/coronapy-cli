@@ -164,7 +164,7 @@ coronapy --help
 
 ## To Do
 - ~~Add Screenshots.~~
-- Catch and handle exceptions.
+- Catch and handle exceptions. (Complete)
 - Add Mroccan States data for Coronavirus disease reports.
 - Add US States data for Coronavirus disease reports.
 - Testing code.

@@ -1,6 +1,6 @@
 import requests
 
-def all_continents(sort_by, limit):
+def get_continents(sort_by, limit):
   url = f'https://corona.lmao.ninja/v2/continents?sort={sort_by}'
   response = requests.get(url)
 

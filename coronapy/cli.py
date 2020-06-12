@@ -15,14 +15,10 @@ def init():
     f = Figlet(font='slant')
     click.echo(str(color.prCyan(f.renderText('Corona CLI'))) + str(color.prGreen('Corona-cli')) + str(
         color.prYellow('v1.3.9')) + ' by MouadBH.')
-    click.echo(str(color.prPurple('Follow me on Twitch: https://www.twitch.tv/chibakutsy'))) 
-    
-
-
-        
-
+    click.echo(str(color.prPurple('Follow me on Github: https://github.com/MouadBH'))) 
+    click.echo(str(color.prPurple('Follow me on Twitch: https://www.twitch.tv/chibaku_'))) 
+    print(' \n\n')
     click.echo(str(color.prRed('Track the Coronavirus disease (COVID-19).') ) )
-    print(' \n')
 
 
 @click.group()
@@ -72,7 +68,7 @@ def continents(sort, limit):
     ]
 
     with yaspin(text="Civid-19 Cases Of All Countries", color="cyan") as sp:
-        for continent in get_continets.all_continents(sort, limit):
+        for continent in get_continets.get_continents(sort, limit):
             all_continents_table.add_row(continent)
 
     all_continents_table.align = 'r'
@@ -101,7 +97,7 @@ def countries(sort, limit):
 
     with yaspin(text="Civid-19 Cases Of All Continents", color="cyan") as sp:
 
-        for country in get_countries.all_countries(sort, limit):
+        for country in get_countries.all_continents(sort, limit):
 
 
             all_countries_table.add_row(country)
@@ -110,9 +106,6 @@ def countries(sort, limit):
     all_countries_table.align[color.prCyan('Continent')] = 'l'
     click.echo(all_countries_table)
     print(sort)
-
-
-
 
 @cli.command()
 @click.option('--chart', '-c', is_flag=True, help='Draw a chart for the data.')

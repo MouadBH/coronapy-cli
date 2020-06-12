@@ -5,7 +5,7 @@ from lib import error
 # error catching by okistuff
 
 
-def all_countries(sorted_by, limit):
+def all_continents(sorted_by, limit):
 
     try:
 

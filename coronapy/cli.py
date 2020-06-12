@@ -3,7 +3,7 @@
 import time
 import click
 import requests
-from lib import color, get_world_wide, get_countries, get_country, error
+from lib import color, get_world_wide, get_countries, get_country, get_continets
 from pyfiglet import Figlet
 from prettytable import PrettyTable
 from yaspin import yaspin
@@ -53,6 +53,34 @@ def all(chart):
 
 
 @cli.command()
+@click.option('--sort', '-s', default='cases', help='Data of each continent sorted by the parameter.')
+@click.option('--limit', '-l', default=0, help='Limit the number of the returned results.')
+def continents(sort, limit):
+    """Get Covid-19 data for all continents."""
+
+    all_continents_table = PrettyTable()
+    all_continents_table.field_names = [
+        color.prCyan('#'),
+        color.prCyan('Continent'),
+        color.prCyan('Total Cases'),
+        color.prCyan('Today Cases'),
+        color.prRed('Total Deaths'),
+        color.prRed('Today Deaths'),
+        color.prGreen('Recovered Cases'),
+        color.prYellow("Excluded cases"),
+        color.prPurple("Critical")
+    ]
+
+    with yaspin(text="Civid-19 Cases Of All Countries", color="cyan") as sp:
+        for continent in get_continets.all_continents(sort, limit):
+            all_continents_table.add_row(continent)
+
+    all_continents_table.align = 'r'
+    all_continents_table.align[color.prCyan('Country')] = 'l'
+    click.echo(all_continents_table)
+    print(sort)
+
+@cli.command()
 @click.option('--sort', '-s', default='cases', help='Data of each country sorted by the parameter.')
 @click.option('--limit', '-l', default=0, help='Limit the number of the returned results.')
 def countries(sort, limit):
@@ -71,14 +99,15 @@ def countries(sort, limit):
         color.prPurple("Critical")
     ]
 
-    with yaspin(text="Covid-19 Cases Of All Countries", color="cyan") as sp:
+    with yaspin(text="Civid-19 Cases Of All Continents", color="cyan") as sp:
+
         for country in get_countries.all_countries(sort, limit):
 
 
             all_countries_table.add_row(country)
 
     all_countries_table.align = 'r'
-    all_countries_table.align[color.prCyan('Country')] = 'l'
+    all_countries_table.align[color.prCyan('Continent')] = 'l'
     click.echo(all_countries_table)
     print(sort)
 

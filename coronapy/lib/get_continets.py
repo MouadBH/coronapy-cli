@@ -5,15 +5,8 @@ def get_continents(sort_by, limit):
     url = f"https://corona.lmao.ninja/v2/continents?sort={sort_by}"
     response = requests.get(url)
 
-    if limit > 0:
-        response = response.json()[:limit]
-    else:
-        response = response.json()
-
-    allContinents = []
-    for index, continent in enumerate(response):
-        allContinents.append(
-            [
+    response = response.json()[:limit] if limit > 0 else response.json()
+    return [[
                 index + 1,
                 continent["continent"],
                 "{:,}".format(continent["cases"]),
@@ -23,7 +16,4 @@ def get_continents(sort_by, limit):
                 "{:,}".format(continent["recovered"]),
                 "{:,}".format(continent["active"]),
                 "{:,}".format(continent["critical"]),
-            ]
-        )
-
-    return allContinents
+            ] for index, continent in enumerate(response)]

@@ -7,12 +7,11 @@ def world_wide():
 
         url = "https://corona.lmao.ninja/v2/all"
         response = requests.get(url)
-        data = [
+        return [
             response.json()["cases"],
             response.json()["deaths"],
             response.json()["recovered"],
         ]
-        return data
 
     except Exception as _error:
 

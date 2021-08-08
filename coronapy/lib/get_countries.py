@@ -16,18 +16,11 @@ def all_continents(sorted_by, limit):
         )
     try:
 
-        if limit > 0:
-            response = response.json()[:limit]
-        else:
-            response = response.json()
+        response = response.json()[:limit] if limit > 0 else response.json()
     except Exception as _error:
         error.crash_msg(_error, "coronapy/get_countries.py", "NONE")
     try:
-        allCountries = []
-        i = 1
-        for country in response:
-            allCountries.append(
-                [
+        return [[
                     i,
                     country["country"],
                     "{:,}".format(country["cases"]),
@@ -37,9 +30,6 @@ def all_continents(sorted_by, limit):
                     "{:,}".format(country["recovered"]),
                     "{:,}".format(country["active"]),
                     "{:,}".format(country["critical"]),
-                ]
-            )
-            i = i + 1
-        return allCountries
+                ] for i, country in enumerate(response, start=1)]
     except Exception as _error:
         error.crash_msg(_error, "coronapy/get_countries.py", "NONE")

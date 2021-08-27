@@ -193,6 +193,9 @@ Contributions are welcome, create a pull request to this repo and I will review 
       <td align="center"><a href="https://github.com/OkiStuff"><img src="https://avatars2.githubusercontent.com/u/40648091?v=4" width="100px;" alt=""/><br /><sub><b>OkiStuff </b></sub></td>  
       <td align="center"><a href="https://github.com/DarkCode01"><img src="https://avatars2.githubusercontent.com/u/23442814?v=4" width="100px;" alt=""/><br /><sub><b>Jose M. Segura Polanco </b></sub></td>  
   </tr>
+  <tr>
+  <td align="center"><a href="https://github.com/yezz123"><img src="https://avatars2.githubusercontent.com/u/52716203?v=4" width="100px;" alt=""/><br /><sub><b>Yasser Tahiri</b></sub></td>    
+  </tr>
 </table>
 
 ## Authors
